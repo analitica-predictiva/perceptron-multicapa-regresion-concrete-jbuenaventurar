@@ -89,8 +89,6 @@ def pregunta_03():
 
     # Retorne el pipeline
     return pipeline
-
-
 def pregunta_04():
     """
     Creación de la malla de búsqueda
@@ -98,7 +96,7 @@ def pregunta_04():
 
     # Importe GridSearchCV
     from sklearn.model_selection import GridSearchCV
-    from sklearn.metrics import r2_score
+    from sklearn.metrics import r2_score as r2
     
     # Cree una malla de búsqueda para el objecto GridSearchCV
     # con los siguientes parámetros de búesqueda:
@@ -130,7 +128,8 @@ def pregunta_04():
         estimator=estimator,
         param_grid=param_grid,
         cv = 5, 
-        scoring={"R2": "r2"}, refit="R2"  
+        scoring= "r2"
+        #scoring= "r2", refit="R2"
     )
 
     return gridsearchcv
@@ -152,7 +151,8 @@ def pregunta_05():
 
     # Entrene el estimador
     estimator.fit(x_train, y_train)  #
-# Pronostique para las muestras de entrenamiento y validacion
+
+    # Pronostique para las muestras de entrenamiento y validacion
     y_train_pred = estimator.predict(x_train)  
     y_test_pred = estimator.predict(x_test)  
 
@@ -163,7 +163,7 @@ def pregunta_05():
     )
     mse_test = mean_squared_error(  
         y_test,  
-        y_train_pred,  
+        y_test_pred,  
     )
 
     # Retorne el mse de entrenamiento y prueba
