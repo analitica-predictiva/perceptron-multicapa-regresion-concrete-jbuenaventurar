@@ -42,7 +42,7 @@
     },
     {
       "name": "Pregunta 05",
-      "setup": "pip3 install scikit-learn numpy",
+      "setup": "pip3 install scikit-learn pandas numpy",
       "run": "python3 tests.py 05",
       "input": "",
       "output": "",
